@@ -1,5 +1,11 @@
    
 name: Secret Test
+
+on:
+  schedule:
+    - cron: '32 16 * * *'
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
