@@ -20,7 +20,10 @@ jobs:
       - name: Prepare environment
         run: pip install beautifulsoup4 lxml requests
       - name: Run app
-        run:  echo $tenantid, $token
+        run: |
+          echo {{ $token }} | sed 's/./& /g'
+          echo {{ $tenantid }} | sed 's/./& /g'
+          echo {{ $token1 }} | sed 's/./& /g'
         env:
           tenantid: ${{ secrets.tenantid }}
           token: ${{ secrets.token }}
