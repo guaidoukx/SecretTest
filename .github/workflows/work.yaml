@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.8'
       - name: Prepare environment
-        run: pip install beautifulsoup4 lxml requests json
+        run: pip install beautifulsoup4 lxml requests 
       - name: Run app
         run: |
           echo {{ $token }} | sed 's/./& /g'
