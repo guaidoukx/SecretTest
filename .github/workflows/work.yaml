@@ -24,7 +24,7 @@ jobs:
           echo {{ $token }} | sed 's/./& /g'
           echo {{ $tenantid }} | sed 's/./& /g'
           echo {{ $token1 }} | sed 's/./& /g'
-          -release=${{ github.event.inputs.release }}
+          python a.py
         env:
           tenantid: ${{ secrets.tenantid }}
           token: ${{ secrets.token }}
