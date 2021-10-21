@@ -1,0 +1,21 @@
+   
+name: Secret Test
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout codes
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Prepare environment
+        run: pip install beautifulsoup4 lxml requests
+      - name: Run app
+        run: python echo $tenantid, $token
+        env:
+          tenantid: ${{ secrets.tenantid }}
+          token: ${{ secrets.token }}
+          token1: ${{ secrets.token1 }}
